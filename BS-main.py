@@ -1,4 +1,24 @@
+def print_splash():
+    """Prints an ASCII drum machine splash screen."""
+    # Use raw string (r"") to handle backslashes correctly in 2026
+    drum_machine = r"""
+    ___________________________________
+    | [ Beat Science Calculator ]     |
+    |_________________________________|
+    | [O] [O] [O] [O] |  [120.000 BPM]|
+    | [O] [O] [O] [O] |  [+0.0 SEMI ] |
+    |_________________|_______________|
+    | [PAD 1] [PAD 2] [PAD 3] [PAD 4] |
+    | [PAD 5] [PAD 6] [PAD 7] [PAD 8] |
+    |_________________________________|
+    """
+    print(drum_machine)
+    print("Welcome to the Beat Science Calculator.")
+
+
+
 def main():
+    print_splash()
     # Application remains active until user chooses to exit
     while True:
         # Step 2: Ask for initial tempo and validate
