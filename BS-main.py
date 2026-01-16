@@ -32,14 +32,17 @@ def main():
                 # Triggers if the user enters non-numeric text
                 print(f"'{pitch_input}' is not a valid number. Please enter a numeric pitch shift.")
 
-        # For now, just confirming the inputs
-        print(f"Starting calculation with: {initial_tempo} BPM and pitch shift: {desired_pitch_shift} semitones")
+        # Step 4: Musical Tempo Calculation
+        # Result = Original Tempo * 2^(Semitones / 12)
+        new_tempo = initial_tempo * (2 ** (desired_pitch_shift / 12))
+
+        print(f"\n>>> RECOMMENDED PRO-TOOLS TEMPO: {new_tempo:.3f} BPM")
                 
 
         # Step 5: Restart or Exit logic
         choice = input("\nPress Enter to run again, or 'z' to exit: ").strip().lower()
         if choice == 'z':
-            print("Exiting Beat Science Calculator. Goodbye!")
+            print("Happy Vocal Layering!")
             break
 
 if __name__ == "__main__":
