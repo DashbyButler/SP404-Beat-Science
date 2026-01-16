@@ -18,9 +18,23 @@ def main():
             except ValueError:
                 # Triggers if the user enters non-numeric text
                 print(f"'{tempo_input}' is not a valid number. Please enter a numeric BPM.")
+        
+        # Step 3: Ask for desired pitch shift and validate
+        while True:
+            try:
+                # Ask for pitch shift (allows decimals and negatives)
+                pitch_input = input("\nEnter the desired pitch shift (in semitones, e.g., +2 or -1): ")
+                desired_pitch_shift = float(pitch_input)
+                
+                # If successful, exit the validation loop
+                break
+            except ValueError:
+                # Triggers if the user enters non-numeric text
+                print(f"'{pitch_input}' is not a valid number. Please enter a numeric pitch shift.")
 
-        # For now, just confirming the input
-        print(f"Starting calculation with: {initial_tempo} BPM")
+        # For now, just confirming the inputs
+        print(f"Starting calculation with: {initial_tempo} BPM and pitch shift: {desired_pitch_shift} semitones")
+                
 
         # Step 5: Restart or Exit logic
         choice = input("\nPress Enter to run again, or 'z' to exit: ").strip().lower()
